@@ -1,0 +1,103 @@
+
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MATRIX OG | Redefining Street Culture</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Orbitron:wght@900&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              matrix: '#ff0000',
+              darker: '#050505',
+              card: '#0a0a0a'
+            },
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+              display: ['Orbitron', 'sans-serif']
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #050505;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #ff0000;
+        border-radius: 4px;
+      }
+      .neon-text {
+        text-shadow: 0 0 10px rgba(255, 0, 0, 0.5), 0 0 20px rgba(255, 0, 0, 0.3);
+      }
+      .neon-border {
+        box-shadow: 0 0 15px rgba(255, 0, 0, 0.2);
+        transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+      .neon-border:hover {
+        box-shadow: 0 0 25px rgba(255, 0, 0, 0.4);
+        border-color: #ff0000;
+      }
+
+      /* Scroll Reveal */
+      .reveal {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+      .reveal.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      /* Active Nav State */
+      .nav-link {
+        position: relative;
+      }
+      .nav-link::after {
+        content: '';
+        position: absolute;
+        bottom: -4px;
+        left: 0;
+        width: 0%;
+        height: 2px;
+        background-color: #ff0000;
+        transition: width 0.3s ease;
+      }
+      .nav-link.active::after {
+        width: 100%;
+      }
+      .nav-link.active {
+        color: #ff0000;
+      }
+
+      /* Floating buttons shadow */
+      .float-shadow {
+        filter: drop-shadow(0 0 8px rgba(255, 0, 0, 0.3));
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "react": "https://esm.sh/react@^19.2.3"
+  }
+}
+</script>
+</head>
+  <body class="bg-darker text-white antialiased">
+    <div id="root"></div>
+  </body>
+</html>
